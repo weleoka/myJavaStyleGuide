@@ -14,9 +14,9 @@ Some points to discuss:
 * no return in the middle of a method...
 * (have more points? raise an issue.)
 
-# 1 - Formatting
+## 1 - Formatting
 
-## 1.1 - Indentation
+### 1.1 - Indentation
 All indenting is done with spaces, not tabs. All indents are four spaces.
 
 Reasoning: All programs work well with spaces. Most programs will mix tabs and spaces so that some lines are indented with spaces and some with tabs. If your tabbing is set to 4 and you share a file with someone that has tabbing set to 8, everything comes out goofy.
@@ -84,7 +84,7 @@ if (superHero == theTick)
 }                                            // YES!
 ```
 
-## 1.2 - Spacing
+### 1.2 - Spacing
 All method names should be immediately followed by a left parenthesis.
 
 ```java
@@ -156,7 +156,7 @@ catch(TooManyPancakesException e)  // NO!
 catch (TooManyPancakesException e) // YES!
 ```
 
-## 1.3 - Class Member Ordering
+### 1.3 - Class Member Ordering
 
 ```java
 class Order
@@ -169,18 +169,18 @@ class Order
 }
 ```
 
-## 1.4 - Maximum Line Length
+### 1.4 - Maximum Line Length
 Avoid making lines longer than 120 characters. If your code starts to get indented way to the right, consider breaking your code into more methods.
 
 Reasoning: Editors and printing facilities used by most programmers can easily handle 120 characters. Longer lines can be frustrating to work with.
 
-## 1.5 - Parentheses
+### 1.5 - Parentheses
 Parentheses should be used in expressions not only to specify order of precedence, but also to help simplify the expression. When in doubt, parenthesize. 
 
-# 2 - Identifiers
+## 2 - Identifiers
 All identifiers use letters ('A' through 'Z' and 'a' through 'z') and numbers ('0' through '9') only. No underscores, dollar signs or non-ascii characters.
 
-## 2.1 - Classes and Interfaces
+### 2.1 - Classes and Interfaces
 All class and interface identifiers will use mixed case. The first letter of each word in the name will be uppercase, including the first letter of the name. All other letters will be in lowercase, except in the case of an acronym, which will be all upper case.
 
 Examples:
@@ -190,7 +190,7 @@ Examples:
     TargetURL
     URLTarget
 
-## 2.2 - Packages
+### 2.2 - Packages
 Package names will use lower case characters only. Try to keep the length under eight (8) characters. Multi-word package names should be avoided.
 
 Examples:
@@ -199,7 +199,7 @@ Examples:
     core
     lang
 
-## 2.3 - All Other Identifiers
+### 2.3 - All Other Identifiers
 All other identifiers, including (but not limited to) fields, local variables, methods and parameters, will use the following naming convention. This includes identifiers for constants.
 
 Reasoning: Using all upper case, as traditionally done in C, is a violation of OO abstraction. For example, a variable which starts out as a constant may be refactored later to not be a constant.
@@ -214,7 +214,7 @@ Examples:
     urlTarget
 
 
-### 2.3.1 Hungarian Notation and Scope Identification
+#### 2.3.1 Hungarian Notation and Scope Identification
 Hungarian notation and scope identification are not allowed.
 
 Reasoning: Hungarian Notation, which specifies type as part of the identifier, violates OO abstraction. Scope identification specifies scope as part of the identifier, which also violates OO abstraction.
@@ -233,7 +233,7 @@ public class Person
 }
 ```
 
-### 2.3.2 Test Code
+#### 2.3.2 Test Code
 Test code is permitted to use underscores in identifiers for methods and fields.
 
 Code for testing other code often needs to be able to refer to existing identifiers, but also be able to append other qualifiers to the name. This is easier to read if an additional delimiter is allowed.
@@ -248,12 +248,12 @@ eatSomePie_return
 eatSomePie_exception
 ```
 
-# 3 - Coding
+## 3 - Coding
 
-## 3.1 - Constructs to Avoid
+### 3.1 - Constructs to Avoid
   
 
-### 3.1.1 - Never use do..while
+#### 3.1.1 - Never use do..while
 Do not use do..while loops.
 
 Reasoning: Consider that the programmer looking at your code is probably examining each method starting at the top and working down. When encountering a loop, the first thing the programmer wants to know is what terminates the loop. If you have that logic at the bottom, it is harder to read. Further, many less experienced programmers are not familiar with do..while, but may be required to modify your code.
@@ -277,22 +277,22 @@ use:
     }
 ```
 
-### 3.1.2 - Never use return in the middle of a method
+#### 3.1.2 - Never use return in the middle of a method
 return is to be used at the end of a method only.
 
 Reasoning: Using return in the middle of a method makes it difficult to later break the method into smaller methods. It also forces the developer to consider more than one exit point to a method.
 
-### 3.1.3 - Never use continue
+#### 3.1.3 - Never use continue
 Never use continue.
 
 Reasoning: Using continue makes it difficult to later break the construct into smaller constructs or methods. It also forces the developer to consider more than one end point for a construct.
 
-### 3.1.4 - Never use break other than in a switch statement
+#### 3.1.4 - Never use break other than in a switch statement
 break is used only for switch statement control.
 
 Reasoning: Using break, other than for switch statement control, makes it difficult to later break a construct into smaller constructs or methods. It also forces the developer to consider more than one end point for a construct.
 
-## 3.2 - Do Not Compound Increment or Decrement Operators
+### 3.2 - Do Not Compound Increment or Decrement Operators
 Use a separate line for an increment or decrement.
 
 Reasoning: Compounding increment or decrement operators into method calls or math is not clear to less experienced programmers who may be required to modify your code.
@@ -314,7 +314,7 @@ x++;
 
 Note: `i++` and `++i` are equally fast, and `i++` seems more consistent with the rest of the language. Since the above prevents any use of a case where `++i` could make a difference, never use pre- increment/decrement.
 
-## 3.3 - Initialization
+### 3.3 - Initialization
 Declare variables as close as possible to where they are used.
 
 Examples:
@@ -339,10 +339,10 @@ doBar(firstWide, secondWide);
 int totalWide = firstWide + secondWide;     //  even better!
 ```
 
-## 3.4 - Access
+### 3.4 - Access
 All fields must be private, except for some constants. 
 
-# 4 - Self-Documenting Code
+## 4 - Self-Documenting Code
 
 "Any fool can write code that a computer can understand.
 Good programmers write code that humans can understand."
@@ -407,8 +407,5 @@ public static void happyBirthday(int age)
     }
 }
 ```
-
-
-
 
 Taken largely from [JavaRanch](https://www.javaranch.com/styleLong.jsp)
