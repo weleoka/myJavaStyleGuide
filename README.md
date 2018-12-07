@@ -301,13 +301,11 @@ Examples:
 
 ```java
 foo(x++); // NO!
-
 foo(x);   // YES!
 x++;
 
 
 y += 100 * x++;  // NO!
-
 y += 100 * x;    // YES!
 x++;
 ```
@@ -345,7 +343,7 @@ All fields must be private, except for some constants.
 ## 4 - Self-Documenting Code
 
 "Any fool can write code that a computer can understand.
-Good programmers write code that humans can understand."
+Good programmers write code that humans can understand."  
 -- Martin Fowler, Refactoring: Improving the Design of Existing Code
 
 Rather than trying to document how you perform a complex algorithm, try to make the algorithm easier to read by introducing more identifiers. This helps in the future in case the algorithm changes but someone forgets to change the documentation.
@@ -359,7 +357,7 @@ if ( (hero == theTick) && ( (sidekick == arthur) || (sidekick == speak) ) )
 
  Use:
 
-```
+```java
 boolean isTickSidekick = ( (sidekick == arthur) || (sidekick == speak) );
 if ( (hero == theTick) && isTickSidekick )
 ```
