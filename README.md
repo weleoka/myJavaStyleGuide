@@ -17,6 +17,8 @@ If changes should be made to this guide or if the reader is in dissagreement wit
     - When to label?
 
 
+
+
 ## 1 - Formatting
 
 ### 1.1 - Indentation
@@ -199,6 +201,35 @@ Statements for, if, while, case, else, else if, try, catch should ideally be pre
 
 The continue, break and return statements are less requiring of a blank line preceeding.
 
+
+### 1.7- Newline before closing brace
+
+* No line break before the opening brace.
+* Line break after the opening brace.
+* Line break before the closing brace.
+* Line break after the closing brace, only if that brace terminates a statement or terminates the body of a method, constructor, or named class. For example, there is no line break after the brace if it is followed by else or a comma. 
+
+Example:
+
+```java
+return new MyClass() {
+  @Override public void method() {
+    if (condition()) {
+      try {
+        something();
+      } catch (ProblemException e) {
+        recover();
+      }
+    } else if (otherCondition()) {
+      somethingElse();
+    } else {
+      lastThing();
+    }
+  }
+};
+```
+
+
 ## 2 - Identifiers
 All identifiers use letters ('A' through 'Z' and 'a' through 'z') and numbers ('0' through '9') only. No underscores, dollar signs or non-ascii characters.
 
@@ -269,6 +300,8 @@ eatSomePie_amount
 eatSomePie_return
 eatSomePie_exception
 ```
+
+
 
 ## 3 - Coding
 
@@ -371,6 +404,9 @@ int totalWide = firstWide + secondWide;     //  even better!
 ### 3.4 - Access
 All fields must be private, except for some constants. 
 
+
+
+
 ## 4 - Self-Documenting Code
 
 "Any fool can write code that a computer can understand.
@@ -432,6 +468,9 @@ public static void happyBirthday(int age)
     }
 }
 ```
+
+
+
 
 ## 5 - Commenting and docstrings
 
