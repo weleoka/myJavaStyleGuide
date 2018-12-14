@@ -11,6 +11,10 @@ If changes should be made to this guide or if the reader is in dissagreement wit
 
 * Docstring/javadoc standards could be included
 * Singleton methods decleration point in class.
+* Exceptions to camelCasingNames. lowerCamelCase UpperCamelCase.
+    - userID // OK!!
+    - CSVWriter or cSVWriter // ??
+    - All capital letters for constants.
 * Multiline method calls and method chaining rules.
 * Labels on iterative control statements. 
     - Should the label be on its own line?
